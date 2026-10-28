@@ -55,7 +55,7 @@ export const SOSModal = () => {
   return (
     <div className="space-y-6">
       {/* Main SOS Trigger Hub */}
-      <div className={`p-8 rounded-3xl border text-center transition-all ${
+      <div className={`p-4 sm:p-8 rounded-3xl border text-center transition-all ${
         isSOSActive
           ? 'bg-red-500/10 border-red-500/50 shadow-2xl'
           : 'bg-white border-slate-200/90 shadow-sm'

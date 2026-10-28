@@ -106,20 +106,20 @@ export const MapView = ({
   ];
 
   return (
-    <div className="w-full relative rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm bg-slate-100" style={{ height }}>
+    <div className="w-full relative rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm bg-slate-100 min-h-[320px]" style={{ height }}>
       {/* Map Legend Overlay */}
-      <div className="absolute top-3 left-3 z-[1000] bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md border border-slate-200/80 text-xs font-semibold flex items-center gap-3">
-        <div className="flex items-center gap-1.5 text-emerald-600">
-          <div className="w-3.5 h-1.5 rounded-full bg-emerald-500" />
-          <span>Safest (Green)</span>
+      <div className="absolute top-2.5 left-2.5 z-[1000] bg-white/95 backdrop-blur-md px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl shadow-md border border-slate-200/80 text-[10px] sm:text-xs font-semibold flex flex-wrap items-center gap-2 sm:gap-3 max-w-[calc(100%-20px)]">
+        <div className="flex items-center gap-1 text-emerald-600">
+          <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+          <span>Safe (Green)</span>
         </div>
-        <div className="flex items-center gap-1.5 text-amber-600">
-          <div className="w-3.5 h-1.5 rounded-full bg-amber-500" />
+        <div className="flex items-center gap-1 text-amber-600">
+          <div className="w-2.5 h-2.5 rounded-full bg-amber-500" />
           <span>Balanced</span>
         </div>
-        <div className="flex items-center gap-1.5 text-red-600">
-          <div className="w-3.5 h-1.5 rounded-full bg-red-500" />
-          <span>Risky/Fastest</span>
+        <div className="flex items-center gap-1 text-red-600">
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
+          <span>Fastest / High Risk</span>
         </div>
       </div>
 

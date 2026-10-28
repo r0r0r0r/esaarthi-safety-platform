@@ -81,7 +81,7 @@ export const RoutePlannerPage = ({ onRouteChange }) => {
             onSelectRoute={(id) => setSelectedRouteId(id)}
             currentLocation={currentLocation}
             destinationLocation={{ lat: 28.5280, lng: 77.2050, name: 'Saket District Centre' }}
-            height="620px"
+            height="440px"
           />
 
           {/* Map Helper Legend Bar */}

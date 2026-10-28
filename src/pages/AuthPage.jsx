@@ -196,11 +196,11 @@ export const AuthPage = ({ onAuthSuccess }) => {
 
       <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl border border-slate-800/20 overflow-hidden relative z-10">
         {/* Header Branding */}
-        <div className="bg-slate-900 p-8 text-center text-white border-b border-slate-800">
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 mx-auto flex items-center justify-center shadow-lg shadow-blue-500/30 mb-3">
-            <Shield className="w-7 h-7 text-white" />
+        <div className="bg-slate-900 p-5 sm:p-8 text-center text-white border-b border-slate-800">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 mx-auto flex items-center justify-center shadow-lg shadow-blue-500/30 mb-3">
+            <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
           </div>
-          <h1 className="text-2xl font-black tracking-tight">E-Saarthi</h1>
+          <h1 className="text-xl sm:text-2xl font-black tracking-tight">E-Saarthi</h1>
           <p className="text-xs text-slate-400 mt-1">
             Women & Citizen Safety Navigation Platform
           </p>
@@ -210,10 +210,10 @@ export const AuthPage = ({ onAuthSuccess }) => {
             <button
               type="button"
               onClick={handleDemoSignIn}
-              className="w-full py-2.5 px-4 bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 border border-blue-500/40 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2"
+              className="w-full py-2.5 px-3 sm:px-4 bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 border border-blue-500/40 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2"
             >
-              <Sparkles className="w-4 h-4 text-blue-400" />
-              <span>One-Click Academic Demo Login (Priya Sharma)</span>
+              <Sparkles className="w-4 h-4 text-blue-400 flex-shrink-0" />
+              <span className="truncate">One-Click Academic Demo Login</span>
             </button>
           </div>
         </div>
@@ -226,7 +226,7 @@ export const AuthPage = ({ onAuthSuccess }) => {
               setIsLogin(true);
               setError('');
             }}
-            className={`flex-1 py-3.5 text-xs font-bold transition-all border-b-2 ${
+            className={`flex-1 py-3 text-xs font-bold transition-all border-b-2 ${
               isLogin ? 'border-blue-600 text-blue-600 bg-white' : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -238,7 +238,7 @@ export const AuthPage = ({ onAuthSuccess }) => {
               setIsLogin(false);
               setError('');
             }}
-            className={`flex-1 py-3.5 text-xs font-bold transition-all border-b-2 ${
+            className={`flex-1 py-3 text-xs font-bold transition-all border-b-2 ${
               !isLogin ? 'border-blue-600 text-blue-600 bg-white' : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -247,7 +247,7 @@ export const AuthPage = ({ onAuthSuccess }) => {
         </div>
 
         {/* Form Body */}
-        <div className="p-8 space-y-4">
+        <div className="p-5 sm:p-8 space-y-4">
           {/* GitHub OAuth Single-Click / Browser Login Button */}
           <div className="space-y-2">
             <button
@@ -424,10 +424,10 @@ export const AuthPage = ({ onAuthSuccess }) => {
 
       {/* GitHub Browser OAuth Authorization Modal */}
       {isGithubModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fadeIn">
-          <div className="w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-800 overflow-hidden text-slate-900 transition-all">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/85 backdrop-blur-md animate-fadeIn overflow-y-auto">
+          <div className="w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-800 overflow-hidden text-slate-900 transition-all my-auto max-h-[92vh] flex flex-col">
             {/* Modal Header mimicking GitHub OAuth dialog */}
-            <div className="bg-[#24292F] text-white px-6 py-4 flex items-center justify-between border-b border-slate-700">
+            <div className="bg-[#24292F] text-white px-5 sm:px-6 py-4 flex items-center justify-between border-b border-slate-700 flex-shrink-0">
               <div className="flex items-center gap-3">
                 <GithubIcon className="w-6 h-6 text-white" />
                 <div>
@@ -448,7 +448,7 @@ export const AuthPage = ({ onAuthSuccess }) => {
             </div>
 
             {/* Modal Body */}
-            <div className="p-6 space-y-5">
+            <div className="p-4 sm:p-6 space-y-4 sm:space-y-5 overflow-y-auto flex-1">
               {/* Connected apps overview banner */}
               <div className="flex items-center justify-center gap-4 py-2">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md">

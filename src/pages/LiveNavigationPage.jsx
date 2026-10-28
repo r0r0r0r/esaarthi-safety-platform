@@ -113,19 +113,19 @@ export const LiveNavigationPage = ({ onRouteChange }) => {
           selectedRouteId={selectedRoute?.id}
           showAllRoutes={false}
           vehiclePosition={vehiclePosition}
-          height="520px"
+          height="420px"
         />
 
         {/* Floating Quick-SOS Button Visible at All Times */}
         <button
           onClick={() => (isSOSActive ? cancelSOS() : triggerSOS())}
-          className={`absolute bottom-6 right-6 z-[1000] p-4 rounded-2xl shadow-2xl flex items-center gap-2.5 font-black text-sm uppercase tracking-wider text-white transition-all transform hover:scale-105 active:scale-95 ${
+          className={`absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-[1000] p-3 sm:p-4 rounded-2xl shadow-2xl flex items-center gap-2 font-black text-xs sm:text-sm uppercase tracking-wider text-white transition-all transform hover:scale-105 active:scale-95 ${
             isSOSActive
               ? 'bg-red-600 ring-4 ring-red-400 animate-pulse'
               : 'bg-red-600 hover:bg-red-700 shadow-red-600/40'
           }`}
         >
-          <ShieldAlert className="w-6 h-6 animate-bounce" />
+          <ShieldAlert className="w-5 h-5 sm:w-6 sm:h-6 animate-bounce" />
           <span>{isSOSActive ? 'Disarm SOS' : 'Instant SOS'}</span>
         </button>
       </div>
