@@ -35,6 +35,15 @@ export const TopHeader = ({ onRouteChange }) => {
     <header className="h-20 bg-white/90 backdrop-blur-md border-b border-slate-200/80 px-6 flex items-center justify-between sticky top-0 z-20 transition-all">
       {/* Left: Greeting & Current Location */}
       <div className="flex items-center gap-4">
+        {user?.avatarUrl && (
+          <img
+            src={user.avatarUrl}
+            alt={user.fullName || 'User'}
+            onClick={() => onRouteChange('profile')}
+            className="w-11 h-11 rounded-2xl object-cover border-2 border-slate-200 shadow-md cursor-pointer hover:scale-105 transition-transform flex-shrink-0"
+            title="View Profile"
+          />
+        )}
         <div>
           <div className="flex items-center gap-2">
             <h2 className="text-xl font-extrabold tracking-tight text-slate-900">

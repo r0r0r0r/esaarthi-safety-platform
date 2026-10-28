@@ -133,15 +133,32 @@ export const Sidebar = ({ currentRoute, onRouteChange }) => {
           }`}
           title={collapsed ? user?.fullName || 'Profile' : undefined}
         >
-          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-amber-500 to-pink-500 flex items-center justify-center text-white font-semibold text-sm shadow-md">
-            {user?.fullName?.charAt(0) || 'P'}
+          <div className="relative flex-shrink-0">
+            {user?.avatarUrl ? (
+              <img
+                src={user.avatarUrl}
+                alt={user.fullName || 'User'}
+                className="w-9 h-9 rounded-full object-cover border border-slate-700 shadow-md"
+              />
+            ) : (
+              <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-amber-500 to-pink-500 flex items-center justify-center text-white font-semibold text-sm shadow-md">
+                {user?.fullName?.charAt(0) || 'P'}
+              </div>
+            )}
+            {user?.provider === 'github' && (
+              <div className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-black rounded-full border border-slate-700 flex items-center justify-center">
+                <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
+              </div>
+            )}
           </div>
           {!collapsed && (
             <div className="overflow-hidden flex-1">
               <p className="text-sm font-semibold text-white truncate leading-tight">
                 {user?.fullName || 'Priya Sharma'}
               </p>
-              <p className="text-[11px] text-slate-400 truncate">Citizen Guardian</p>
+              <p className="text-[11px] text-slate-400 truncate">
+                {user?.provider === 'github' ? `@${user?.username || 'github'}` : 'Citizen Guardian'}
+              </p>
             </div>
           )}
         </div>
